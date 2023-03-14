@@ -52,7 +52,7 @@ useEffect(()=> {
       fetchImages();
       setReloadComponent(false);
       setRefresh(true);
-    }, 500);
+    }, 3500);
   
     delayedFetch();
   
