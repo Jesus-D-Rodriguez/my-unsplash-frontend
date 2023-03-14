@@ -91,6 +91,11 @@ useEffect(() => {
                 setImages(newImages)
             } else {*/
             //setImages(newImages);
+            console.log("images antes del set");
+            console.log(images);
+            console.log("newImages antes del set");
+            console.log(newImages);
+            console.log("page" + page);
                 if (newImages.length < perPage) {
                     setHasMore(false);
                 }
