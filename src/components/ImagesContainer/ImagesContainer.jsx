@@ -40,26 +40,26 @@ useEffect(() => {
 }, [props.searchTerm]);
 
 
-    useEffect(()=> {
-        setHasMore(true);
-        
-        setRefresh(false);
-        let mounted = true;
-        //if (props.searchTerm !== previousSearchTerm.current) {
-            // El usuario ha borrado el searchterm
-            // Aquí puedes realizar las acciones necesarias
-            console.log("Aqui deberia hacer setImages");
-            setImages([]);
-         // }
-          previousSearchTerm.current = props.searchTerm;
-        fetchImages();
-        setReloadComponent(false);
-       setRefresh(true);
-       return () => {
-        mounted = false;
-      };
-    }, [props.searchTerm]);
-    //, reloadComponent
+useEffect(()=> {
+    setHasMore(true);
+    setRefresh(false);
+    let mounted = true;
+  
+    const delayedFetch = debounce(() => {
+        console.log("Aui deberia hacer fetchimages")
+      setImages([]);
+      fetchImages();
+      setReloadComponent(false);
+      setRefresh(true);
+    }, 500);
+  
+    delayedFetch();
+  
+    return () => {
+      mounted = false;
+    };
+}, [props.searchTerm]);
+//, reloadComponent
 
 
     //props.searchTerm, currentPage, , reloadComponent
@@ -121,7 +121,6 @@ useEffect(() => {
             console.log(error);
         }
         setLoading(false);
-        setIsExecuting(false);
     }
 
     const filterImages = (images, searchTerm) => {
