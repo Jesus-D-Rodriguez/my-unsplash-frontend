@@ -64,7 +64,7 @@ useEffect(() => {
     const deleteImage = async (id)=> {
         console.log("entro a la funcion");
         try {
-            await axios.post(`http://localhost:5000/images/${id}`);
+            await axios.post(`https://my-unsplash-api-cr1h.onrender.com/images/${id}`);
             setImages(images.filter(image => image._id !== id));
         } catch (error) {
             console.log(error);
@@ -76,7 +76,7 @@ useEffect(() => {
     const fetchImages = async (page = 1, perPage = 15) =>{
         setLoading(true);
         try {
-            const response = await axios.get(`http://localhost:5000?page=${page}&perPage=${perPage}&search=${props.searchTerm}`);
+            const response = await axios.get(`https://my-unsplash-api-cr1h.onrender.com/?page=${page}&perPage=${perPage}&search=${props.searchTerm}`);
             const newImages = response.data;
             
             //if (props.searchTerm != "") {
