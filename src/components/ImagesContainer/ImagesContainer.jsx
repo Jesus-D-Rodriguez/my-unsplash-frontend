@@ -58,7 +58,7 @@ useEffect(() => {
        return () => {
         mounted = false;
       };
-    }, [props.searchTerm]);
+    }, [props.searchTerm, isExecuting]);
     //, reloadComponent
 
 
@@ -121,6 +121,7 @@ useEffect(() => {
             console.log(error);
         }
         setLoading(false);
+        setIsExecuting(false);
     }
 
     const filterImages = (images, searchTerm) => {
