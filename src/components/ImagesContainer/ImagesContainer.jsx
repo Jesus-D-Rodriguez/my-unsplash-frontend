@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useState, useEffect, useRef, useCallback, Component } from "react";
 import { Grid, GridList, GridListTile } from '@material-ui/core';
 import Masonry from 'masonry-layout';
-import { debounce } from "lodash";
+import debounce from 'lodash/debounce';
 
 
 const ImagesContainer = (props)=>{
