@@ -15,9 +15,14 @@ const ImagesContainer = (props)=>{
     const [hasMore, setHasMore] = useState(true);
     const [reloadComponent, setReloadComponent] = useState(false);
     const previousSearchTerm = useRef('');
+    const [isExecuting, setIsExecuting] = useState(false);
 
 useEffect(() => {
     let mounted = true;
+    if (isExecuting) {
+        return;
+      }
+      setIsExecuting(true);
  console.log("props: " + props.searchTerm);
  console.log("previous: "  + previousSearchTerm.current);
   //if (props.searchTerm === '' && previousSearchTerm.current !== '') {
@@ -28,9 +33,9 @@ useEffect(() => {
  // }
   
   previousSearchTerm.current = props.searchTerm;
-
   return () => {
     mounted = false;
+    setIsExecuting(false);
   };
 }, [props.searchTerm]);
 
