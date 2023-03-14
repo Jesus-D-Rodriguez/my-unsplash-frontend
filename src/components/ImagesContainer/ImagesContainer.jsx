@@ -58,7 +58,7 @@ useEffect(() => {
        return () => {
         mounted = false;
       };
-    }, [props.searchTerm, isExecuting]);
+    }, [props.searchTerm]);
     //, reloadComponent
 
 
