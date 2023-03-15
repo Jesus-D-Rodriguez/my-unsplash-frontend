@@ -42,11 +42,14 @@ useEffect(() => {
 
 
 useEffect(()=> {
-    setHasMore(true);
+    /*setHasMore(true);
     setRefresh(false);
+    let mounted = true;*/
     let mounted = true;
   
     const delayedFetch = debounce(() => {
+            setHasMore(true);
+    setRefresh(false);
         console.log("Aui deberia hacer fetchimages")
       setImages([]);
       fetchImages();
