@@ -17,6 +17,7 @@ const ImagesContainer = (props)=>{
     const [reloadComponent, setReloadComponent] = useState(false);
     const previousSearchTerm = useRef('');
     const [isExecuting, setIsExecuting] = useState(false);
+    const [contador, setContador] = useState(0);
 
 useEffect(() => {
    /* let mounted = true;
@@ -54,6 +55,7 @@ useEffect(()=> {
     }, 3500);
   
     delayedFetch();
+    setContador(contador+1);
   
     return () => {
       mounted = false;
