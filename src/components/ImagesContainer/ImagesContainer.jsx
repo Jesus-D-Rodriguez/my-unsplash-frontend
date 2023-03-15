@@ -189,7 +189,7 @@ useEffect(()=> {
                 {refresh && 
                 images.map((image, index) => {
                     if (index === images.length - 1) {
-                        console.log("sexo");
+                        //console.log("sexo");
                         return (
                             //ref={lastImageRef}
                             <div key={image._id}  className="image-container">
@@ -204,7 +204,7 @@ useEffect(()=> {
                             </div>
                         );
                     } else {
-                        console.log("sex");
+                       // console.log("sex");
                         return (
                             <div key={image._id} className="image-container">
                                 <img src={image.imageUrl} alt={image.title} style={{width:'100%'}} />
