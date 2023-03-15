@@ -153,7 +153,8 @@ useEffect(()=> {
             if (index === images.length - 1) {
 
                 return (
-                    <div key={image._id} ref={lastImageRef} className="image-container">
+                    //ref={lastImageRef}
+                    <div key={image._id} className="image-container">
                         <img src={image.imageUrl} alt={image.title} style={{width:'100%'}} />
                         <div className="hover"> 
                             <div className="hover-inside">
