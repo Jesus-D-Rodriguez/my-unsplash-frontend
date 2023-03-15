@@ -19,25 +19,19 @@ const ImagesContainer = (props)=>{
     const [isExecuting, setIsExecuting] = useState(false);
 
 useEffect(() => {
-    let mounted = true;
+   /* let mounted = true;
     if (isExecuting) {
         return;
       }
-      setIsExecuting(true);
+      setIsExecuting(true);*/
  console.log("props: " + props.searchTerm);
  console.log("previous: "  + previousSearchTerm.current);
-  //if (props.searchTerm === '' && previousSearchTerm.current !== '') {
-   // if (props.searchTerm !== previousSearchTerm.current) {
-    // El usuario ha borrado el searchterm
-    // Aquí puedes realizar las acciones necesarias
-   // setImages([]);
- // }
-  
-  previousSearchTerm.current = props.searchTerm;
-  return () => {
+
+  //previousSearchTerm.current = props.searchTerm;
+ /* return () => {
     mounted = false;
     setIsExecuting(false);
-  };
+  };*/
 }, [props.searchTerm]);
 
 
@@ -46,6 +40,8 @@ useEffect(()=> {
     setRefresh(false);
     let mounted = true;*/
     let mounted = true;
+
+    previousSearchTerm.current = props.searchTerm;
   
     const delayedFetch = debounce(() => {
             setHasMore(true);
