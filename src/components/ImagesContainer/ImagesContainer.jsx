@@ -54,9 +54,11 @@ useEffect(()=> {
       setRefresh(true);
     }, 3500);
     setContador(contador+1);
-    console.log("Antes del delayed" + contador);
+    console.log("contador antes");
+    console.log(contador);
     delayedFetch();
-    console.log("despues del delayed" + contador);
+    console.log("contador despues");
+    console.log(contador);
 
   
     return () => {
