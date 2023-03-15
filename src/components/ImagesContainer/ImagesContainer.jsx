@@ -53,10 +53,11 @@ useEffect(()=> {
       //setReloadComponent(false);
       setRefresh(true);
     }, 3500);
-  
-    delayedFetch();
     setContador(contador+1);
-    console.log(contador);
+    console.log("Antes del delayed" + contador);
+    delayedFetch();
+    console.log("despues del delayed" + contador);
+
   
     return () => {
       mounted = false;
