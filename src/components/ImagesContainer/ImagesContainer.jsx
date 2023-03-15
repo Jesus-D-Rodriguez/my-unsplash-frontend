@@ -102,6 +102,7 @@ useEffect(()=> {
             console.log(newImages);
             console.log("page" + page);
                 if (newImages.length < perPage) {
+                    console.log("has more = false xd");
                     setHasMore(false);
                 }
                 setImages(prevImages => [...prevImages, ...newImages]);
