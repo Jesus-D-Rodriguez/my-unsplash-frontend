@@ -49,7 +49,7 @@ useEffect(()=> {
         console.log("Aui deberia hacer fetchimages")
       setImages([]);
       fetchImages();
-      setReloadComponent(false);
+      //setReloadComponent(false);
       setRefresh(true);
     }, 3500);
   
