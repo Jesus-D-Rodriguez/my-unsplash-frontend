@@ -55,7 +55,7 @@ useEffect(()=> {
     }, 3500);
   
     delayedFetch();
-    //setContador(contador+1);
+    setContador(contador+1);
   
     return () => {
       mounted = false;
