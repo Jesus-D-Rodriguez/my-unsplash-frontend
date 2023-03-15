@@ -185,7 +185,7 @@ useEffect(()=> {
     return (
         <div id="imgs-container">
             <div id="imgs-container-2">
-                {//refresh && renderImages()
+                {refresh && 
                 images.map((image, index) => {
                     if (index === images.length - 1) {
                         console.log("sexo");
