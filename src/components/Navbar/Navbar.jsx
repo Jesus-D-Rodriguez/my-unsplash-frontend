@@ -5,6 +5,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import Formulario from "../Form/Form";
 import FormModal from "../FormModal/FormModal";
+import debounce from 'lodash/debounce';
 
 const Navbar = (props)=>{
     const [formularioVisible, setFormularioVisible] = useState(false);
@@ -27,13 +28,15 @@ const Navbar = (props)=>{
         console.log(term);
     }
 
+    const debounceSearchTerm = debounce(handleSearchTerm, 5000);
+
     return (
     <div className="nav-bar">
         <div id="first-nav-bar">
             <img src={logo} alt="" />
             <div id="search-div">
                 <FontAwesomeIcon icon={faMagnifyingGlass} className="search-icon"/>
-                <input type="text" id="search" placeholder="Search by name" value={searchTerm} onChange={handleSearchTerm}></input>
+                <input type="text" id="search" placeholder="Search by name" value={searchTerm} onChange={debounceSearchTerm}></input>
             </div>
         </div>
         <div id="second-nav-bar">
