@@ -77,7 +77,7 @@ useEffect(()=> {
         const url = "https://my-unsplash-api-cr1h.onrender.com" ;
         const url2 = "http://localhost:5000";
         try {
-            await axios.post(`${url2}/images/${id}`);
+            await axios.post(`${url}/images/${id}`);
             setImages(images.filter(image => image._id !== id));
         } catch (error) {
             console.log(error);
