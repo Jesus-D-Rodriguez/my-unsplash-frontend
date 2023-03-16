@@ -52,7 +52,7 @@ useEffect(()=> {
       fetchImages();
       //setReloadComponent(false);
       setRefresh(true);
-    }, 3500);
+    }, 0);
     setContador(contador+1);
     console.log("contador antes");
     console.log(contador);
