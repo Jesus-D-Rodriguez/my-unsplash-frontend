@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar/Navbar";
 import ImagesContainer from "./components/ImagesContainer/ImagesContainer";
 import "./App.css"
 import Formulario from "./components/Form/Form";
+import debounce from 'lodash/debounce';
 
 function App() {
 
@@ -14,6 +15,8 @@ function App() {
     setBuscado(true);
     console.log(searchTerm);
   }
+
+  const debounceSearchTerm = debounce(handleSearchTermChange, 5000);
 
   function handleBuscado() {
 
@@ -43,7 +46,7 @@ function App() {
 
   return (
     <div className="container">
-      <Navbar onSearchTermChange={handleSearchTermChange}/>
+      <Navbar onSearchTermChange={debounce(handleSearchTermChange, 5000)}/>
       <ImagesContainer searchTerm={searchTerm} buscado={buscado}/>
     </div>
   )
