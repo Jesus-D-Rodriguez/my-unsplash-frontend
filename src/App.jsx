@@ -46,7 +46,7 @@ function App() {
 
   return (
     <div className="container">
-      <Navbar onSearchTermChange={debounce(handleSearchTermChange, 5000)}/>
+      <Navbar onSearchTermChange={debounce(handleSearchTermChange, 600)}/>
       <ImagesContainer searchTerm={searchTerm} buscado={buscado}/>
     </div>
   )

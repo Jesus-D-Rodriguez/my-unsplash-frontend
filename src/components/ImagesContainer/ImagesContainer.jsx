@@ -44,7 +44,7 @@ useEffect(()=> {
 
     previousSearchTerm.current = props.searchTerm;
   
-    const delayedFetch = debounce(() => {
+    //const delayedFetch = debounce(() => {
             setHasMore(true);
     setRefresh(false);
         console.log("Aui deberia hacer fetchimages")
@@ -52,11 +52,11 @@ useEffect(()=> {
       fetchImages();
       //setReloadComponent(false);
       setRefresh(true);
-    }, 0);
+   // }, 0);
     setContador(contador+1);
     console.log("contador antes");
     console.log(contador);
-    delayedFetch();
+   //delayedFetch();
     console.log("contador despues");
     console.log(contador);
 
